@@ -16,7 +16,7 @@ pub fn run_lisp(s: &String) -> Result<Rc<Lisp>, Box<Error>> {
   return SECD::new(
     try!(
       Compiler::new().compile(
-        &try!(
+        try!(
           Parser::new(s).parse()
         )
       )
